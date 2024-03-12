@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Catalog.Dtos;
 using Catalog.Models;
 using Catalog.Repositories;
@@ -18,20 +17,18 @@ namespace Catalog.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<VareDto>> GetVareAsync()
+        public IEnumerable<VareDto> GetVare()
         {
             // Kig i Extensions.cs hvorfor vi bruger DTO og vare.AsDto() kald
-            // await er "wrapped" i () fordi await er seperede fra metoden vi vil gøre async. Nu ved compiler at først skal den udføre (await...) og så når det er completed udfør select.
-            var vare = (await repository.GetVareAsync())
-                        .Select(vare => vare.AsDto());
+            var vare = repository.GetVare().Select(vare => vare.AsDto());
             return vare;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<VareDto>> GetEnkeltVareAsync(Guid id)
+        public ActionResult<VareDto> GetEnkeltVare(Guid id)
         //ActionResult gør det muligt at få flere returns så return NotFound eller ok
         {
-            var vare = await repository.GetEnkeltVareAsync(id);
+            var vare = repository.GetEnkeltVare(id);
             if (vare is null) {
                 return NotFound();
             }
@@ -41,7 +38,7 @@ namespace Catalog.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<VareDto>> CreateVareAsync(CreateVareDto vareDto)
+        public ActionResult<VareDto> CreateVare(CreateVareDto vareDto)
         {
             Vare vare = new Vare() {
                 Id = Guid.NewGuid(),
@@ -50,18 +47,18 @@ namespace Catalog.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
 
-            await repository.CreateVareAsync(vare);
+            repository.CreateVare(vare);
 
-            return CreatedAtAction(nameof(GetVareAsync), new { id = vare.Id}, vare.AsDto());
+            return CreatedAtAction(nameof(GetVare), new { id = vare.Id}, vare.AsDto());
             // CreatedAtAction returnerer en HTTP 201 statuskode, og i responsens Location header vil der være en URL, der peger på den oprettede ressource (prøv post i swagger og se reponse headers). Responsens body vil indeholde den oprettede ressource repræsenteret som en VareDto og der vil være Guid på den nye postede vare under location.
         }
 
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateVareAsync(Guid id, UpdateVareDto vareDto)
+        public ActionResult UpdateVare(Guid id, UpdateVareDto vareDto)
         {
             // henter først en vare vha. GetVare metode udfra id bestemt i UpdateVare parametren.
-            var existingVare = await repository.GetEnkeltVareAsync(id);
+            var existingVare = repository.GetEnkeltVare(id);
 
             if (existingVare == null)
             {
@@ -74,17 +71,17 @@ namespace Catalog.Controllers
                 Price = vareDto.Price
             };
 
-            await repository.UpdateVareAsync(updatedVare);
+            repository.UpdateVare(updatedVare);
 
             // returner statuskode 204
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteVareAsync(Guid id)
+        public ActionResult DeleteVare(Guid id)
         {
              // henter først en vare vha. GetVare metode udfra id bestemt i UpdateVare parametren.
-            var existingVare = await repository.GetEnkeltVareAsync(id);
+            var existingVare = repository.GetEnkeltVare(id);
 
             if (existingVare == null)
             {
@@ -92,7 +89,7 @@ namespace Catalog.Controllers
             }
 
             // ovenover matchede vi id med id fra paramtre og nu sletter vi den
-            await repository.DeleteVareAsync(id);
+            repository.DeleteVare(id);
 
             // statuskode 204
             return NoContent();

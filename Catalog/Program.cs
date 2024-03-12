@@ -18,10 +18,7 @@ builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
 });
 
 builder.Services.AddSingleton<IVareRepository, MongoDBVareRepository>();
-// Blev nød til at sætte "SuppressAsyncSuffixInActionNames" til false fordi .NET ikke vil remove async suffix fra metoder i runtime
-builder.Services.AddControllers(options => {
-    options.SuppressAsyncSuffixInActionNames = false;
-});
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

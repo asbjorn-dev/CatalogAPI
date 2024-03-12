@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj": {}
+    "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj": {
+    "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
+        "projectUniqueName": "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
         "projectName": "Catalog",
-        "projectPath": "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
+        "projectPath": "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
         "packagesPath": "C:\\Users\\Asbjørn\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\obj\\",
+        "outputPath": "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

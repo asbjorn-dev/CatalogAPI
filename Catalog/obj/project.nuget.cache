@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hswpgv+U/pkmRle94AN0snNAM31jGXiSqfcmIBoJaiGmuANBsDirpU4DJWfTF1uONNeUJGQWVy9QSXmQ6BdrJg==",
+  "dgSpecHash": "GU8ZHUWPmbMm/ap3w3Lfdnly/cs9Bz4n7UiaoPwZ1vZELe6z9GlYR5mKoXAb/vY0yjEU4hFYz1Mxt72Kq2id5A==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
+  "projectFilePath": "C:\\Users\\Asbjørn\\Desktop\\CatalogAPI\\Catalog\\Catalog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asbjørn\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Asbjørn\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

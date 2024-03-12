@@ -15,39 +15,33 @@ namespace Catalog.Repositories
             new Vare { Id= Guid.NewGuid(), Name = "Båd", Price = 30000, CreatedDate = DateTimeOffset.UtcNow}
         };
 
-        // NOTE: Bruger FromResult og CompletedTask osv fordi metoderne herinde ikke indebærer nogen asynkron opgave. Det her var test af hardcoded data jeg startede allerførst med.
-        public async Task<IEnumerable<Vare>> GetVareAsync() 
+        public IEnumerable<Vare> GetVare() 
         {
-            return await Task.FromResult(Varene);
+            return Varene;
         }
 
-        public async Task<Vare> GetEnkeltVareAsync(Guid id) 
+        public Vare GetEnkeltVare(Guid id) 
         {
-            var varen = Varene.Where(vare => vare.Id == id).SingleOrDefault();
+            return Varene.Where(vare => vare.Id == id).SingleOrDefault();
             // Uden singleordefault finder den en hel collection vi skal bare bruge 1 udfra id fra parameter ellers returner den null hvis der ikke er nogle
-            return await Task.FromResult(varen);
         }
 
-        public async Task CreateVareAsync(Vare vare)
+        public void CreateVare(Vare vare)
         {
             Varene.Add(vare);
-            // Lav en task som allerede er færdig og return den betyder CompletedTask
-            await Task.CompletedTask;
         }
 
-        public async Task UpdateVareAsync(Vare vare)
+        public void UpdateVare(Vare vare)
         {
             var index = Varene.FindIndex(existingVare => existingVare.Id == vare.Id);
             // nu replacer vi i listen "Varene" det index det rigtige sted med den nye vare
             Varene[index] = vare;
-            await Task.CompletedTask;
         }
 
-        public async Task DeleteVareAsync(Guid id)
+        public void DeleteVare(Guid id)
         {
             var index = Varene.FindIndex(existingVare => existingVare.Id == id);
             Varene.RemoveAt(index);
-            await Task.CompletedTask;
         }
     }
 }
