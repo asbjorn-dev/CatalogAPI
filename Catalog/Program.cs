@@ -35,9 +35,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
+     // httpsreducrection er her når env. er sat til development for docker. ASP.NET tager production istedet for development når man kører i en docker fil (se launchsettings).
 }
 
-app.UseHttpsRedirection();
 
 app.UseRouting();
 
