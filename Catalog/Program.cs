@@ -26,6 +26,8 @@ builder.Services.AddControllers(options => {
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHealthChecks();
+// tilføj flere .Add her til healthchecks på mongodb f.eks. senere
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,8 +39,19 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Health check endpoint
+app.Map("/health", appBuilder =>
+{
+    appBuilder.UseEndpoints(endpoints =>
+    {
+        endpoints.MapHealthChecks("/health");
+    });
+});
 
 app.Run();
