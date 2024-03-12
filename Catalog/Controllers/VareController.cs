@@ -9,10 +9,10 @@ namespace Catalog.Controllers
     [Route("vare")]
     public class VareController : ControllerBase
     {
-        private readonly IInMemVareRepository repository;
+        private readonly IVareRepository repository;
 
         // dependency injection her - denne klasse har nu ingen ide om hvad for en repo der bliver brugt (løs kobling)
-        public VareController(IInMemVareRepository repository) {
+        public VareController(IVareRepository repository) {
             this.repository = repository;
         }
 

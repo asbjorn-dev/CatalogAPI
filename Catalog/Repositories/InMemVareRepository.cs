@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http.Features;
 
 namespace Catalog.Repositories
 {
-    public class InMemVareRepository : IInMemVareRepository
+    public class InMemVareRepository : IVareRepository
     {
 
         // readonly da det ikke skal ændre listen efter construct af repo objekt

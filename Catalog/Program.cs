@@ -1,9 +1,23 @@
 using Catalog.Repositories;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IInMemVareRepository, InMemVareRepository>();
+// BsonSeralizer... fortæller at hver gang den ser en Guid i alle entiteter skal den serializeres til en string. 
+BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+// Samme som før bare så den ved hvad for en DateTime det er
+BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
+builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
+{
+    var connectionString = "mongodb://localhost:27017"; // Replace with your MongoDB connection string
+    return new MongoClient(connectionString);
+});
+
+builder.Services.AddSingleton<IVareRepository, MongoDBVareRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
