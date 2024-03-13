@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Catalog.Controllers
 {
     [ApiController]
-    [Route("vare")]
+    [Route("api/vare")]
     public class VareController : ControllerBase
     {
         private readonly IVareRepository repository;
