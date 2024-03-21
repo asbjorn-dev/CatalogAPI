@@ -11,11 +11,13 @@ namespace Catalog.Controllers
     public class VareController : ControllerBase
     {
         private readonly IVareRepository repository;
+        private readonly ILogger<VareController> logger;
 
         // dependency injection her - denne klasse har nu ingen ide om hvad for en repo der bliver brugt (løs kobling)
-        public VareController(IVareRepository repository)
+        public VareController(IVareRepository repository, ILogger<VareController> logger)
         {
             this.repository = repository;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -25,6 +27,9 @@ namespace Catalog.Controllers
             // await er "wrapped" i () fordi await er seperede fra metoden vi vil gøre async. Nu ved compiler at først skal den udføre (await...) og så når det er completed udfør select.
             var vare = (await repository.GetVareAsync())
                         .Select(vare => vare.AsDto());
+            
+            logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrieved {vare.Count()} vare");
+
             return vare;
         }
 
