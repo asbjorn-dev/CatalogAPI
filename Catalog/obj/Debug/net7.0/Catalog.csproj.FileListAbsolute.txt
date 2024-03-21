@@ -44,3 +44,16 @@ C:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\obj\Debug\net7.0\refint\Catalog.dll
 C:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\obj\Debug\net7.0\Catalog.pdb
 C:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\obj\Debug\net7.0\Catalog.genruntimeconfig.cache
 C:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\obj\Debug\net7.0\ref\Catalog.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\HealthChecks.MongoDb.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Hosting.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+c:\Users\Asbjørn\Desktop\CatalogAPI\Catalog\bin\Debug\net7.0\System.Diagnostics.DiagnosticSource.dll
