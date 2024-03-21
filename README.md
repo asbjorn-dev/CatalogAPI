@@ -1,13 +1,13 @@
 # CatalogAPI
 Dette projekt er et REST API, der fungerer som et katalog, hvor brugere kan administrere varer.
 
-Projektbeskrivelse
+# Projektbeskrivelse
 Formålet med projektet var at demonstrere forståelsen for udvikling af REST API'er, Docker-containerisering og deployment i Kubernetes-miljøet.
 
-Funktionaliteter
+# Funktionaliteter
 Brugerne kan tilføje, opdatere, slette og få vist varer i kataloget gennem API'et.
 
-Teknologier
+# Teknologier
 Dette projekt er udviklet ved hjælp af følgende teknologier:
 
 ASP.NET Core: Til udvikling af REST API.
